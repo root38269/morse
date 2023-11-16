@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <title>Morse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <body>
 
+    <div class="main_area">
+      <div class="input_area">
+        <div class="input_label">
+          <span>↓文章を入力</span>
+        </div>
+        <div class="input_box">
+          <textarea class="input_text" id="input_text1"></textarea>
+          <div class="option_box">
+            言語を選択<br>
+            <select name="input_lang" id="input_lang">
+              <option value="en">英語</option>
+              <option value="ja">日本語</option>
+              <option value="el">ギリシャ語</option>
+              <option value="cyri">キリル文字</option>
+              <option value="hebr">ヘブライ語</option>
+              <option value="arab">アラビア語</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="input_area">
+        <div class="input_label">
+          <span>↓モースル信号に変換</span>
+        </div>
+        <div class="input_box">
+          <textarea class="input_text" id="input_text2"></textarea>
+          <div class="option_box">
+            短点　　　: <input type="text" class="morse_option_text" value="・" id="morse_dot"><br>
+            長点　　　: <input type="text" class="morse_option_text" value="－" id="morse_dash"><br>
+            文字区切り: <input type="text" class="morse_option_text" value=", " id="morse_char_split"><br>
+            単語区切り: <input type="text" class="morse_option_text" value="; " id="morse_word_split"><br>
+            <input type="button" value="再生" id="play"><br>
+            音量(<span id="volume_label">10</span>%)<br>
+            <input type="range" min="0" max="100" step="1" value="10" id="volume" class="volume"><br>
+            <input type="checkbox" id="input_morse">
+            <label for="input_morse">モースル信号を入力(shiftキー)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="output_area">
+        <div class="output_label">
+          <span>↓文章に再変換</span>
+        </div>
+        <div class="output_box">
+          <textarea class="output_text" readonly id="output_text"></textarea>
+          <div class="option_box">
+            言語を選択<br>
+            <select name="output_lang" id="output_lang">
+              <option value="en">英語</option>
+              <option value="ja">日本語</option>
+              <option value="el">ギリシャ語</option>
+              <option value="cyri">キリル文字</option>
+              <option value="hebr">ヘブライ語</option>
+              <option value="arab">アラビア語</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="morse.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
