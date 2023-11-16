@@ -315,7 +315,7 @@ class Morse {
     }
   }
   /**
-   * モースル符号として出力する
+   * モールス符号として出力する
    * @param {string} dot 
    * @param {string} dash 
    * @param {string} char_split 
@@ -547,7 +547,7 @@ class Morse {
   }
 
   /**
-   * 指定した文字をモースル符号に変換可能な文字に変換する。
+   * 指定した文字をモールス符号に変換可能な文字に変換する。
    * @param {Language} lang 
    * @param {string} string 
    */
@@ -780,6 +780,5 @@ class Morse {
   }
 
 }
-
 
 
