@@ -1,1 +1,56 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: calc(100% - 16px);
+  width: calc((100% 16px));
+  margin: 8px;
+}
 
+.main_area {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  min-width: 320px;
+  height: 100%;
+}
+.input_area,.output_area {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_box,.output_box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 50px;
+  margin-bottom: 15px;
+  resize: none;
+}
+.input_text,.output_text {
+  height: calc(100% - 8px);
+  flex-grow: 1;
+  resize: none;
+}
+.option_box {
+  flex-basis: 170px;
+  flex-grow: 0;
+}
+.volume {
+  width: 150px;
+}
+
+.morse_option_text {
+  width: 20px;
+}
+
+label {
+  user-select: none;
+}
+
+
+.right2left {
+  direction: rtl;
+}
