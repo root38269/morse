@@ -233,19 +233,25 @@ function play_morse (data, ended) {
   play();
 }
 
+const default_message = new Map();
+default_message.set("en", "This is morse code");
+default_message.set("ja", "これはわぶんモールスしんごうです、 アルファベットはかっこ（alphabet）でかこみます");
+default_message.set("el", "αυτός είναι ο κώδικας Μορς");
+default_message.set("cyri", "это азбука Морзе");
+default_message.set("hebr", "זה קוד מורס");
+default_message.set("arab", "هذا هو مورس");
+
 function show_dafault_message () {
-  if (select_input_lang.value === "en") {
-    textarea_input_text1.value = "This is morse code";
-  }else if (select_input_lang.value === "ja") {
-    textarea_input_text1.value = "これはわぶんモールスしんごうです、 アルファベットはかっこ（alphabet）でかこみます";
-  }else if (select_input_lang.value === "el") {
-    textarea_input_text1.value = "αυτός είναι ο κώδικας Μορς";
-  }else if (select_input_lang.value === "cyri") {
-    textarea_input_text1.value = "это азбука Морзе";
-  }else if (select_input_lang.value === "hebr") {
-    textarea_input_text1.value = "זה קוד מורס";
-  }else if (select_input_lang.value === "arab") {
-    textarea_input_text1.value = "هذا هو مورس";
+  if (textarea_input_text1.value === "") {
+    textarea_input_text1.value = default_message.get(select_input_lang.value);
+  }else{
+    let arr = Array.from(default_message.values());
+    for (let i = 0; i < arr.length; i++) {
+      if (textarea_input_text1.value === arr[i]) {
+        textarea_input_text1.value = default_message.get(select_input_lang.value);
+        break;
+      }
+    }
   }
   convert();
 }
@@ -256,4 +262,3 @@ function display_init () {
 }
 
 display_init();
-
