@@ -82,6 +82,14 @@ textarea_input_text2.addEventListener("input", function (event) {
   textarea_input_text1.value = "";
   convert2();
 });
+textarea_input_text1.addEventListener("focus", function (event) {
+  input_input_morse.checked = false;
+  toggle_input();
+});
+textarea_input_text2.addEventListener("focus", function (event) {
+  input_input_morse.checked = false;
+  toggle_input();
+});
 select_input_lang.addEventListener("input", function (event) {
   /**@type {Language} */
   let new_lang = select_input_lang.value;
@@ -128,8 +136,10 @@ input_volume.addEventListener("input", function (event) {
   span_volume_label.innerText = input_volume.value;
   master_gain.gain.value = Number(input_volume.value) / 100;
 });
+input_input_morse.addEventListener("input", toggle_input);
+
 let morse_input_mode = false;
-input_input_morse.addEventListener("input", function (event) {
+function toggle_input () {
   if (input_input_morse.checked) {
     main_morse_receiver.reset();
     textarea_input_text2.value = "";
@@ -137,7 +147,7 @@ input_input_morse.addEventListener("input", function (event) {
   }else{
     morse_input_mode = false;
   }
-});
+}
 
 let main_morse_receiver = new MorseReceiver();
 document.addEventListener("keydown", function(event) {
