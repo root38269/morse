@@ -78,7 +78,7 @@ class MorseReceiver {
     this.#input_flag = false;
   }
   /**
-   * 入力情報を解析する
+   * 入力情報を解析する。クラス外で使う必要はない。
    */
   analyze_code () {
     if (this.#time_stamps.length < 4) return;
@@ -96,6 +96,7 @@ class MorseReceiver {
       }
     }
     let threshold2 = presult[1] + (presult[1] - threshold);
+    if (threshold2 < presult[1] * 5/3) threshold2 = presult[1] * 5/3
     let current_word = [];
     let current_character = [];
     let next_interval;
