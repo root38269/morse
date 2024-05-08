@@ -100,7 +100,7 @@ label {
   text-align: center;
 }
 .table_wrap .under_double td {
-  border-bottom: 4px double black;
+  border-bottom: 3px double black;
 }
 
 table.hide {
