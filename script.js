@@ -272,3 +272,20 @@ function display_init () {
 }
 
 display_init();
+
+const div_table_wrap = document.getElementById("table_wrap");
+const select_table = document.getElementById("select_table");
+
+select_table.addEventListener("change", select_table_listener);
+
+function select_table_listener (event) {
+  let lang = select_table.value;
+  let old_table = div_table_wrap.getElementsByClassName("show")[0];
+  let new_table = document.getElementById("table_" + lang);
+  old_table.classList.add("hide");
+  old_table.classList.remove("show");
+  new_table.classList.add("show");
+  new_table.classList.remove("hide");
+}
+select_table_listener();
+
